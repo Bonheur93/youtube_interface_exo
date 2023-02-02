@@ -2,7 +2,7 @@
 
 let container = document.getElementById('videos_gallery')
 let lecteur = document.getElementById('player')
-let title;
+let title = document.getElementById("nom");
 const options = {
 	method: 'GET',
 	headers: {
@@ -64,6 +64,10 @@ fetch('https://youtube-v31.p.rapidapi.com/search?q=Fally ipupa&part=snippet%2Cid
 	}); 
 })
 .catch(err => console.error(err));
+
+title.addEventListener("change", (e) => {
+	title = e.target.value
+});
 
 
 document.getElementById('search_btn').addEventListener('click',()=>{
